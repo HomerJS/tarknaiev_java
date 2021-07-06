@@ -1,5 +1,9 @@
 package com.tarknaiev.home_4_regex;
 
+import com.tarknaiev.home_4_regex.controller.Controller;
+import com.tarknaiev.home_4_regex.model.Person;
+import com.tarknaiev.home_4_regex.view.View;
+
 /**
  * @author ihor tarkaniev
  */
@@ -11,9 +15,9 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        ModelPerson modelPerson = new ModelPerson();
+        Person person = new Person();
         View view = new View();
-        Controller controller = new Controller(modelPerson, view);
+        Controller controller = new Controller(person, view);
         controller.run();
     }
 

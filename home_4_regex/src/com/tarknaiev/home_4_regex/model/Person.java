@@ -1,11 +1,11 @@
-package com.tarknaiev.home_4_regex;
+package com.tarknaiev.home_4_regex.model;
 
 /**
  * The type Model person.
  *
  * @author ihor Tarknaiev
  */
-public class ModelPerson {
+public class Person {
     private String lastName;
     private String firstName;
     private String secondName;
