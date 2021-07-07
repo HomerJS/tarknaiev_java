@@ -1,5 +1,6 @@
 package com.tarknaiev.home_4_regex.controller;
 
+import com.tarknaiev.home_4_regex.exceptions.TestException;
 import com.tarknaiev.home_4_regex.model.Field;
 import com.tarknaiev.home_4_regex.model.Person;
 import com.tarknaiev.home_4_regex.view.MessageConstants;
@@ -34,11 +35,26 @@ public class Controller {
         Scanner sc = new Scanner(System.in);
         view.printMessage(MessageConstants.START_MESSAGE);
         for (Field field: Field.values()) {
-            String inputValue = this.dataGetter(sc, field);
-            person.setData(field.getName(), inputValue);
+            this.updateField(sc, field);
         }
         view.printMessage(MessageConstants.ALL_DATA_MESSAGE);
         view.printMessage(person.toString());
+    }
+
+    /**
+     * get and set field data
+     *
+     * @param sc
+     * @param field
+     */
+    protected void updateField(Scanner sc, Field field) {
+        String inputValue = this.dataGetter(sc, field);
+        try {
+            person.setData(field.getName(), inputValue);
+        } catch (TestException e) {
+            view.printMessage(e.getMessage());
+            this.updateField(sc, field);
+        }
     }
 
     /**

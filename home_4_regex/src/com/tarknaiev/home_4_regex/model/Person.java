@@ -1,5 +1,8 @@
 package com.tarknaiev.home_4_regex.model;
 
+import com.tarknaiev.home_4_regex.exceptions.TestException;
+import com.tarknaiev.home_4_regex.view.MessageConstants;
+
 /**
  * The type Model person.
  *
@@ -42,7 +45,14 @@ public class Person {
      * @param fieldName  the field name
      * @param inputValue the input value
      */
-    public void setData(String fieldName, String inputValue) {
+    public void setData(String fieldName, String inputValue) throws TestException {
+        /**
+         * emulate exception
+         */
+        if (fieldName.equals("nickName") && inputValue.equals("errorNick")) {
+            throw new TestException(MessageConstants.WRONG_NICK_MESSAGE);
+        }
+        /////////////////////////////////////////////
         try {
             this.getClass().getDeclaredField(fieldName).set(this, inputValue);
         } catch (Exception e) {

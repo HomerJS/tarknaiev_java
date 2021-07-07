@@ -4,4 +4,5 @@ public interface MessageConstants {
     String START_MESSAGE = "start.message";
     String ALL_DATA_MESSAGE = "all.data.message";
     String ERROR_MESSAGE = "error.message";
+    String WRONG_NICK_MESSAGE = "wrong.nick.message";
 }

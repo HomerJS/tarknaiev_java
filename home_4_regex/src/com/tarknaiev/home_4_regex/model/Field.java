@@ -4,7 +4,7 @@ public enum Field {
     FIRST_NAME("firstName", "first name", "[a-zA-Z]"),
     LAST_NAME("lastName", "last name", "[a-zA-Z]"),
     SECOND_NAME("secondName", "second name", "[a-zA-Z]"),
-    NICK_NAME("nickName", "nick", "[^a-zA-Z0-9]"),
+    NICK_NAME("nickName", "nick", "^[a-zA-Z0-9]+$"),
     COMMENT("comment", "comment", "[^a-zA-Z0-9]"),
     GROUP("group", "group", "^[1-9]+[0-9]*$"),
     PHONE("phone", "phone", "(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)"),
