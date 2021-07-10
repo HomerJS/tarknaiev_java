@@ -1,8 +1,6 @@
-/home_1/target/
 /home_1/src/test/
-/home_2_game/target/
-/home_2_junit/target/
-/home_2_junit/nbproject/
-/home_3_game_with_unit/nbproject/
-/home_3_game_with_unit/target/
-/.idea
+**/.idea
+**/target
+**/nbproject
+**/out
+*.iml
